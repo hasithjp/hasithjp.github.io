@@ -3,7 +3,7 @@
 <head>
   <title> Smart Oil Lamp </title>
   
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,7 +22,7 @@
 	<center>
 	<h1 style="color:white;" ><b> Smart Oil Lamp </b></h1>
 	<br>
-	<p> Please click a button to light the oil lamp </p>
+	<p style="color:white;" > Please click a button to light the oil lamp </p>
 	<br>
 	<button id="L1" onclick="ignite1()" class="btn btn-warning"> Lamp 1 </button>
 	<button id="L2" onclick="ignite2()" class="btn btn-warning"> Lamp 2 </button>
@@ -49,7 +49,7 @@
 		
 		function ignite2() {
 		// Create a client instance
-		client = new Paho.MQTT.Client("iot.eclipse.org",80,"/ws", "clientId");
+		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
 
 		// set callback handlers
 		client.onConnectionLost = onConnectionLost;
@@ -62,7 +62,7 @@
 		
 		function ignite3() {
 		// Create a client instance
-		client = new Paho.MQTT.Client("iot.eclipse.org",80,"/ws", "clientId");
+		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
 
 		// set callback handlers
 		client.onConnectionLost = onConnectionLost;
@@ -75,7 +75,7 @@
 		
 		function ignite4() {
 		// Create a client instance
-		client = new Paho.MQTT.Client("iot.eclipse.org",80,"/ws", "clientId");
+		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
 
 		// set callback handlers
 		client.onConnectionLost = onConnectionLost;
@@ -88,7 +88,7 @@
 		
 		function ignite5() {
 		// Create a client instance
-		client = new Paho.MQTT.Client("iot.eclipse.org",80,"/ws", "clientId");
+		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
 
 		// set callback handlers
 		client.onConnectionLost = onConnectionLost;
@@ -163,6 +163,7 @@
 			  if (message.payloadString == "1ok"){
 				console.log("message from the lamp:"+message.payloadString);
 				document.getElementById("L1").disabled = true;
+				<h4> 
 				}
 			  if (message.payloadString == "2ok"){
 				console.log("message from the lamp:"+message.payloadString);
