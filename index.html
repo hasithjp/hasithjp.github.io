@@ -36,7 +36,7 @@
 	<script>
 		function ignite1() {
 		// Create a client instance
-		client = new Paho.MQTT.Client("iot.eclipse.org",80,"/ws", "clientId");
+		client = new Paho.MQTT.Client("iot.eclipse.org",80,"/wss", "clientId");
 
 		// set callback handlers
 		client.onConnectionLost = onConnectionLost;
