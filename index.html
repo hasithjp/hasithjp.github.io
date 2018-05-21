@@ -159,28 +159,28 @@
 		// called when a message arrives
 		function onMessageArrived(message) {
 		  console.log("onMessageArrived:"+message.payloadString);
-		  alert(message.payloadString);
-			  if (message.payloadString == "1ok"){
-				console.log("message from the lamp:"+message.payloadString);
-				document.getElementById("L1").disabled = true;
-				
-				}
-			  if (message.payloadString == "2ok"){
-				console.log("message from the lamp:"+message.payloadString);
-				document.getElementById("L2").disabled = true;
-				}
-			  if (message.payloadString == "3ok"){
-				console.log("message from the lamp:"+message.payloadString);
-				document.getElementById("L3").disabled = true;
-				}
-			  if (message.payloadString == "4ok"){
-				console.log("message from the lamp:"+message.payloadString);
-				document.getElementById("L4").disabled = true;
-				}
-			  if (message.payloadString == "5ok"){
-				console.log("message from the lamp:"+message.payloadString);
-				document.getElementById("L5").disabled = true;
-				}
+		  //alert(message.payloadString);
+		  if (message.payloadString == "1ok"){
+			console.log("message from the lamp:"+message.payloadString);
+			document.getElementById("L1").disabled = true;
+
+			}
+		  if (message.payloadString == "2ok"){
+			console.log("message from the lamp:"+message.payloadString);
+			document.getElementById("L2").disabled = true;
+			}
+		  if (message.payloadString == "3ok"){
+			console.log("message from the lamp:"+message.payloadString);
+			document.getElementById("L3").disabled = true;
+			}
+		  if (message.payloadString == "4ok"){
+			console.log("message from the lamp:"+message.payloadString);
+			document.getElementById("L4").disabled = true;
+			}
+		  if (message.payloadString == "5ok"){
+			console.log("message from the lamp:"+message.payloadString);
+			document.getElementById("L5").disabled = true;
+			}
 		}
 		
 		
