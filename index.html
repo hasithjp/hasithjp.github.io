@@ -10,7 +10,37 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
+<<<<<<< HEAD
   <script>
+=======
+</head>
+
+<body style="background-image:url('bg.jpg')">
+	
+
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<center>
+	<h1 style="color:white;" ><b> Smart Oil Lamp </b></h1>
+	<br>
+	<p style="color:white;" > Please click a button to light the oil lamp </p>
+	<br>
+	<button id="L1" onclick="ignite1()" class="btn btn-warning"> Lamp 1 </button>
+	<button id="L2" onclick="ignite2()" class="btn btn-warning"> Lamp 2 </button>
+	<button id="L3" onclick="ignite3()" class="btn btn-warning"> Lamp 3 </button>
+	<button id="L4" onclick="ignite4()" class="btn btn-warning"> Lamp 4 </button>
+	<button id="L5" onclick="ignite5()" class="btn btn-warning"> Lamp 5 </button>
+	
+	
+	
+	
+	<script>
+>>>>>>> parent of ed0f68e... Update index.html
 		function ignite1() {
 		// Create a client instance
 		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
