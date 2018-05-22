@@ -11,20 +11,6 @@
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
   <script>
-  		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
-
-  		$( document ).ready(function() {
-  			console.log( "document loaded" );
-
-			// set callback handlers
-			client.onConnectionLost = onConnectionLost;
-			client.onMessageArrived = onMessageArrived;
-
-			// connect the client
-			client.connect();
-			client.subscribe("lampout359");
-    	});
-
 		function ignite1() {
 		// Create a client instance
 		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
@@ -92,82 +78,104 @@
 		
 		
 		
-		// called when the client connects
-		function onConnect1() {
-		  // Once a connection has been made, make a subscription and send a message.
-		  console.log("onConnect");
-		  message = new Paho.MQTT.Message("1");
-		  message.destinationName = "lampin359";
-		  client.send(message);
-		}
-		
-		function onConnect2() {
-		  // Once a connection has been made, make a subscription and send a message.
-		  console.log("onConnect");
-		  message = new Paho.MQTT.Message("2");
-		  message.destinationName = "lampin359";
-		  client.send(message);
-		}
-		
-		function onConnect3() {
-		  // Once a connection has been made, make a subscription and send a message.
-		  console.log("onConnect");
-		  message = new Paho.MQTT.Message("3");
-		  message.destinationName = "lampin359";
-		  client.send(message);
-		}
-		
-		function onConnect4() {
-		  // Once a connection has been made, make a subscription and send a message.
-		  console.log("onConnect");
-		  message = new Paho.MQTT.Message("4");
-		  message.destinationName = "lampin359";
-		  client.send(message);
-		}
-		
-		function onConnect5() {
-		  // Once a connection has been made, make a subscription and send a message.
-		  console.log("onConnect");
-		  message = new Paho.MQTT.Message("5");
-		  message.destinationName = "lampin359";
-		  client.send(message);
-		}
+		// called when the client connect
 
-		
-		
-		// called when the client loses its connection
-		function onConnectionLost(responseObject) {
-		  if (responseObject.errorCode !== 0) {
-			console.log("onConnectionLost:"+responseObject.errorMessage);
-		  }
-		}
+		$(function(){
+			client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
+			console.log( "document loaded" );
 
-		// called when a message arrives
-		function onMessageArrived(message) {
-		  console.log("onMessageArrived:"+message.payloadString);
-		  //alert(message.payloadString);
-		  if (message.payloadString == "1ok"){
-			console.log("message from the lamp:"+message.payloadString);
-			document.getElementById("L1").disabled = true;
+			// set callback handlers
+			client.onConnectionLost = onConnectionLost;
+			client.onMessageArrived = onMessageArrived;
 
+			// connect the client
+			client.connect({onSuccess:onConnect});
+
+			function onConnect() {
+			  // Once a connection has been made, make a subscription and send a message.
+			  console.log("onConnect");
+			  client.subscribe("lampout359");
 			}
-		  if (message.payloadString == "2ok"){
-			console.log("message from the lamp:"+message.payloadString);
-			document.getElementById("L2").disabled = true;
+
+			// called when the client loses its connection
+			function onConnectionLost(responseObject) {
+			  if (responseObject.errorCode !== 0) {
+				console.log("onConnectionLost:"+responseObject.errorMessage);
+			  }
 			}
-		  if (message.payloadString == "3ok"){
-			console.log("message from the lamp:"+message.payloadString);
-			document.getElementById("L3").disabled = true;
+
+			// called when a message arrives
+			function onMessageArrived(message) {
+			  console.log("onMessageArrived:"+message.payloadString);
+			  //alert(message.payloadString);
+			  if (message.payloadString == "1ok"){
+				console.log("message from the lamp:"+message.payloadString);
+				document.getElementById("L1").disabled = true;
+
+				}
+			  if (message.payloadString == "2ok"){
+				console.log("message from the lamp:"+message.payloadString);
+				document.getElementById("L2").disabled = true;
+				}
+			  if (message.payloadString == "3ok"){
+				console.log("message from the lamp:"+message.payloadString);
+				document.getElementById("L3").disabled = true;
+				}
+			  if (message.payloadString == "4ok"){
+				console.log("message from the lamp:"+message.payloadString);
+				document.getElementById("L4").disabled = true;
+				}
+			  if (message.payloadString == "5ok"){
+				console.log("message from the lamp:"+message.payloadString);
+				document.getElementById("L5").disabled = true;
+				}
 			}
-		  if (message.payloadString == "4ok"){
-			console.log("message from the lamp:"+message.payloadString);
-			document.getElementById("L4").disabled = true;
+
+			function onConnect1() {
+			  // Once a connection has been made, make a subscription and send a message.
+			  console.log("onConnect");
+			  message = new Paho.MQTT.Message("1");
+			  message.destinationName = "lampin359";
+			  client.send(message);
 			}
-		  if (message.payloadString == "5ok"){
-			console.log("message from the lamp:"+message.payloadString);
-			document.getElementById("L5").disabled = true;
+			
+			function onConnect2() {
+			  // Once a connection has been made, make a subscription and send a message.
+			  console.log("onConnect");
+			  message = new Paho.MQTT.Message("2");
+			  message.destinationName = "lampin359";
+			  client.send(message);
 			}
-		}
+			
+			function onConnect3() {
+			  // Once a connection has been made, make a subscription and send a message.
+			  console.log("onConnect");
+			  message = new Paho.MQTT.Message("3");
+			  message.destinationName = "lampin359";
+			  client.send(message);
+			}
+			
+			function onConnect4() {
+			  // Once a connection has been made, make a subscription and send a message.
+			  console.log("onConnect");
+			  message = new Paho.MQTT.Message("4");
+			  message.destinationName = "lampin359";
+			  client.send(message);
+			}
+			
+			function onConnect5() {
+			  // Once a connection has been made, make a subscription and send a message.
+			  console.log("onConnect");
+			  message = new Paho.MQTT.Message("5");
+			  message.destinationName = "lampin359";
+			  client.send(message);
+			}
+
+    		$('#btn').click(function() {
+        	alert("Hello");
+
+    	});
+});
 		
 	</script>
 
