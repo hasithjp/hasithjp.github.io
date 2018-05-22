@@ -11,10 +11,10 @@
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
   <script>
+  		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
 
   		$( document ).ready(function() {
   			console.log( "document loaded" );
-	        client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
 
 			// set callback handlers
 			client.onConnectionLost = onConnectionLost;
