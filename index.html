@@ -134,6 +134,8 @@
 			$('#L1').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("Button1Press");
+			  client.onConnectionLost = onConnectionLost;
+			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("1");
 			  message.destinationName = "lampin359";
 			  client.send(message);
@@ -142,6 +144,8 @@
 			$('#L2').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("ButtonPress2");
+			  client.onConnectionLost = onConnectionLost;
+			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("2");
 			  message.destinationName = "lampin359";
 			  client.send(message);
@@ -150,6 +154,8 @@
 			$('#L3').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("ButtonPress3");
+			  client.onConnectionLost = onConnectionLost;
+			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("3");
 			  message.destinationName = "lampin359";
 			  client.send(message);
@@ -158,6 +164,8 @@
 			$('#L4').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("ButtonPress4");
+			  client.onConnectionLost = onConnectionLost;
+			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("4");
 			  message.destinationName = "lampin359";
 			  client.send(message);
@@ -166,13 +174,12 @@
 			$('#L5').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("ButtonPress5");
+			  client.onConnectionLost = onConnectionLost;
+			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("5");
 			  message.destinationName = "lampin359";
 			  client.send(message);
 			});
-
-    		$('#btn').click(function() {
-        	alert("Hello");
 
     	});
 });
