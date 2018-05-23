@@ -26,6 +26,7 @@
 			  console.log("onConnect");
 			  message = new Paho.MQTT.Message("S");
 			  message.destinationName = "lampin359";
+			  client.send(message);
 			  client.subscribe("lampout359");
 			}
 			// called when the client loses its connection
