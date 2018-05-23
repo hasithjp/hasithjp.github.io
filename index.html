@@ -39,7 +39,6 @@
 			  console.log("onMessageArrived:"+message.payloadString);
 			  //alert(message.payloadString);
 			  if (message.payloadString.split(" ")[0] == "R"){
-			  	$('#loading').fadeOut('500');
 			  	$('#cntr').fadeIn('500');
 				console.log("message from the lamp:"+message.payloadString);
 				if (message.payloadString.split(" ")[1] == "1"){
