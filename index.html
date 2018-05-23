@@ -39,7 +39,7 @@
 			  console.log("onMessageArrived:"+message.payloadString);
 			  //alert(message.payloadString);
 			  if (message.payloadString.split(" ")[0] == "R"){
-			  	$('#loading').fadeIn('1000');
+			  	$('#loading').fadeOut('1000');
 			  	$('#cntr').fadeIn('1000');
 				console.log("message from the lamp:"+message.payloadString);
 				if (message.payloadString.split(" ")[1] == "1"){
