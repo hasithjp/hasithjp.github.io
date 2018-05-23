@@ -40,8 +40,22 @@
 			  //alert(message.payloadString);
 			  if (message.payloadString.split(" ")[0] == "R"){
 				console.log("message from the lamp:"+message.payloadString);
-				document.getElementById("L1").disabled = true;
+				if (message.payloadString.split(" ")[1] == "1"){
+					document.getElementById("L1").disabled = true;
 				}
+				if (message.payloadString.split(" ")[2] == "1"){
+					document.getElementById("L2").disabled = true;
+				}
+				if (message.payloadString.split(" ")[3] == "1"){
+					document.getElementById("L3").disabled = true;
+				}
+				if (message.payloadString.split(" ")[4] == "1"){
+					document.getElementById("L4").disabled = true;
+				}
+				if (message.payloadString.split(" ")[5] == "1"){
+					document.getElementById("L5").disabled = true;
+				}
+			  }
 			  if (message.payloadString == "1ok"){
 				console.log("message from the lamp:"+message.payloadString);
 				document.getElementById("L1").disabled = true;
