@@ -12,59 +12,7 @@
   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
   <script>
-		function ignite1() {
-		// Create a client instance
-		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
-		// set callback handlers
-		client.onConnectionLost = onConnectionLost;
-		client.onMessageArrived = onMessageArrived;
-		// connect the client
-		client.connect({onSuccess:onConnect1});
-		}
-		
-		function ignite2() {
-		// Create a client instance
-		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
-		// set callback handlers
-		client.onConnectionLost = onConnectionLost;
-		client.onMessageArrived = onMessageArrived;
-		// connect the client
-		client.connect({onSuccess:onConnect2});
-		}
-		
-		function ignite3() {
-		// Create a client instance
-		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
-		// set callback handlers
-		client.onConnectionLost = onConnectionLost;
-		client.onMessageArrived = onMessageArrived;
-		// connect the client
-		client.connect({onSuccess:onConnect3});
-		}
-		
-		function ignite4() {
-		// Create a client instance
-		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
-		// set callback handlers
-		client.onConnectionLost = onConnectionLost;
-		client.onMessageArrived = onMessageArrived;
-		// connect the client
-		client.connect({onSuccess:onConnect4});
-		}
-		
-		function ignite5() {
-		// Create a client instance
-		client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
-		// set callback handlers
-		client.onConnectionLost = onConnectionLost;
-		client.onMessageArrived = onMessageArrived;
-		// connect the client
-		client.connect({onSuccess:onConnect5});
-		}
-		
-		
-		
-		// called when the client connect
+
 		$(function(){
 			client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
 			console.log( "document loaded" );
@@ -112,6 +60,7 @@
 			$('#L1').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("Button1Press");
+			  client.connect();
 			  client.onConnectionLost = onConnectionLost;
 			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("1");
@@ -122,6 +71,7 @@
 			$('#L2').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("ButtonPress2");
+			  client.connect();
 			  client.onConnectionLost = onConnectionLost;
 			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("2");
@@ -132,6 +82,7 @@
 			$('#L3').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("ButtonPress3");
+			  client.connect();
 			  client.onConnectionLost = onConnectionLost;
 			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("3");
@@ -142,6 +93,7 @@
 			$('#L4').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("ButtonPress4");
+			  client.connect();
 			  client.onConnectionLost = onConnectionLost;
 			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("4");
@@ -152,6 +104,7 @@
 			$('#L5').click(function() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("ButtonPress5");
+			  client.connect();
 			  client.onConnectionLost = onConnectionLost;
 			  client.onMessageArrived = onMessageArrived;
 			  message = new Paho.MQTT.Message("5");
