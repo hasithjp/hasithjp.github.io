@@ -24,6 +24,8 @@
 			function onConnect() {
 			  // Once a connection has been made, make a subscription and send a message.
 			  console.log("onConnect");
+			  message = new Paho.MQTT.Message("S");
+			  message.destinationName = "lampin359";
 			  client.subscribe("lampout359");
 			}
 			// called when the client loses its connection
@@ -36,6 +38,10 @@
 			function onMessageArrived(message) {
 			  console.log("onMessageArrived:"+message.payloadString);
 			  //alert(message.payloadString);
+			  if (message.payloadString.split(" ")[0] == "R"){
+				console.log("message from the lamp:"+message.payloadString);
+				document.getElementById("L1").disabled = true;
+				}
 			  if (message.payloadString == "1ok"){
 				console.log("message from the lamp:"+message.payloadString);
 				document.getElementById("L1").disabled = true;
