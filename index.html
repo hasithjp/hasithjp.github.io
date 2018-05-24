@@ -13,7 +13,7 @@
   <script>
 
 		$(function(){
-			client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", String(Math.random());
+			client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", String(Math.random()));
 			console.log( "document loaded" );
 			// set callback handlers
 			client.onConnectionLost = onConnectionLost;
