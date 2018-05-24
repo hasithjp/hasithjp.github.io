@@ -13,7 +13,7 @@
   <script>
 
 		$(function(){
-			client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", "clientId");
+			client = new Paho.MQTT.Client("wss://iot.eclipse.org:443/ws", String(Math.random());
 			console.log( "document loaded" );
 			// set callback handlers
 			client.onConnectionLost = onConnectionLost;
@@ -40,6 +40,7 @@
 			  //alert(message.payloadString);
 			  if (message.payloadString.split(" ")[0] == "R"){
 			  	$('#loading').fadeOut('1000');
+
 			  	$('#cntr').fadeIn('1000');
 				console.log("message from the lamp:"+message.payloadString);
 				if (message.payloadString.split(" ")[1] == "1"){
@@ -61,22 +62,27 @@
 			  if (message.payloadString == "1ok"){
 				console.log("message from the lamp:"+message.payloadString);
 				document.getElementById("L1").disabled = true;
+				$('.thankyou').fadeIn('500');
 				}
 			  if (message.payloadString == "2ok"){
 				console.log("message from the lamp:"+message.payloadString);
 				document.getElementById("L2").disabled = true;
+				$('.thankyou').fadeIn('500');
 				}
 			  if (message.payloadString == "3ok"){
 				console.log("message from the lamp:"+message.payloadString);
 				document.getElementById("L3").disabled = true;
+				$('.thankyou').fadeIn('500');
 				}
 			  if (message.payloadString == "4ok"){
 				console.log("message from the lamp:"+message.payloadString);
 				document.getElementById("L4").disabled = true;
+				$('.thankyou').fadeIn('500');
 				}
 			  if (message.payloadString == "5ok"){
 				console.log("message from the lamp:"+message.payloadString);
 				document.getElementById("L5").disabled = true;
+				$('.thankyou').fadeIn('500');
 				}
 			}
 			$('#L1').click(function() {
@@ -160,12 +166,14 @@
 			<button id="L4" class="btn btn-warning"> Lamp 4 </button>
 			<button id="L5" class="btn btn-warning"> Lamp 5 </button>
 		</div>
+		<h1 class="display-2 thankyou" style="color:white; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'; font-weight: lighter; display: none;" > Thank you..!</h1>
 		<div id="loading">
                 <ul class="bokeh">
                     <li></li>
                     <li></li>
                     <li></li>
                 </ul>
+        <h1 class="display-2" style="color:white; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'; font-weight: lighter;" > Please wait until the lamp is switched on...</h1>
         </div>
 	</center>
 		
